@@ -2,6 +2,18 @@ h1, p {
   font-family: Lato;
 }
 
+#footer {
+  background-color: #212121;
+  height: 60px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  line-height: 50px;
+  color: #aaa;
+  text-align: center;
+  width: 100%;
+}
+
 /* input[type=radio] {
   display:none;
   -webkit-appearance:button;

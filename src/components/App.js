@@ -1,6 +1,7 @@
 import React from 'react';
 import dateFormat from 'dateformat';
 import CalcForm from './calc/CalcForm';
+import Footer from './common/Footer';
 
 class App extends React.Component {
   constructor(props) {
@@ -362,16 +363,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container text-center">
-        <h1>Kalkulator Dni Roboczych</h1>
-        <br />
-        <CalcForm
-          fromDate={this.state.fromDate}
-          toDate={this.state.toDate}
-          numberOfWorkdays={this.state.numberOfWorkdays}
-          handleChange={this.handleChange}
-          checked={this.state.checked}
-        />
+      <div>
+        <div className="container text-center">
+          <h1>Kalkulator Dni Roboczych</h1>
+          <br />
+          <CalcForm
+            fromDate={this.state.fromDate}
+            toDate={this.state.toDate}
+            numberOfWorkdays={this.state.numberOfWorkdays}
+            handleChange={this.handleChange}
+            checked={this.state.checked}
+          />
+        </div>
+        <Footer />
       </div>
     );
   }
