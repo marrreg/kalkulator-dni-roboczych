@@ -8,7 +8,7 @@ class CalcForm extends React.Component {
       <form className="form-horizontal">
         <DateField
           id="fromDate"
-          labelname="Daata początkowa"
+          labelname="Data początkowa"
           value={this.props.fromDate}
           checked={this.props.checked["fromDate"]}
           handleChange={this.props.handleChange} />
