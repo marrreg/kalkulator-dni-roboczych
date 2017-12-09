@@ -3,8 +3,8 @@ import React, {PropTypes} from 'react';
 class NumberOfWorkdays extends React.Component {
   render() {
     return (
-      <div className="form-group">
-        <label htmlFor="numberOfWorkdays"><h3>Liczba dni roboczych</h3></label><br/>
+      <div className="row">
+        <div className="col">
         <input
           id="numberOfWorkdays"
           type="number"
@@ -14,11 +14,14 @@ class NumberOfWorkdays extends React.Component {
           value={this.props.numberOfWorkdays}
           onChange={this.props.handleChange}
           disabled={this.props.checked} />
+        </div>
+        <div className="col">
         <input 
           id={"numberOfWorkdays" + "Checkbox"} 
           type="radio"
           checked={this.props.checked}
           onChange={this.props.handleChange} />
+        </div>
       </div>
     );
   }
