@@ -366,11 +366,14 @@ class App extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col">
-            First column
+            <h1>Kalkulator Dni Roboczych</h1>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            1
           </div>
           <div className="col-6">
-            <h1>Kalkulator Dni Roboczych</h1>
-            <br />
             <CalcForm
               fromDate={this.state.fromDate}
               toDate={this.state.toDate}
@@ -380,10 +383,9 @@ class App extends React.Component {
             />
           </div>
           <div className="col">
-            Last column
+            3
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
