@@ -13,7 +13,7 @@ class NumberOfWorkdays extends React.Component {
           className="form-control"
           value={this.props.numberOfWorkdays}
           onChange={this.props.handleChange}
-          disabled={this.props.checked} />&nbsp;&nbsp;&nbsp;
+          disabled={this.props.checked} />
         <input 
           id={"numberOfWorkdays" + "Checkbox"} 
           type="radio"
