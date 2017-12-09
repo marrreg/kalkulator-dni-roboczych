@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react';
 class NumberOfWorkdays extends React.Component {
   render() {
     return (
-      <div>
+      <div className="form-group">
         <label htmlFor="numberOfWorkdays"><h3>Liczba dni roboczych</h3></label><br/>
         <input
           id="numberOfWorkdays"
