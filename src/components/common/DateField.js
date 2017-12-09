@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react';
 class DateField extends React.Component {
   render() {
     return (
-      <div className="form-group">
+      <div>
         <label htmlFor={this.props.id}><h3>{this.props.labelname}</h3></label><br/>
         <input
           id={this.props.id}
