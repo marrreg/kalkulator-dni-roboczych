@@ -3,20 +3,23 @@ import React, {PropTypes} from 'react';
 class DateField extends React.Component {
   render() {
     return (
-      <div>
-        <label htmlFor={this.props.id}><h3>{this.props.labelname}</h3></label><br/>
-        <input
-          id={this.props.id}
-          type="date"
-          className="form-control"
-          value={this.props.value}
-          onChange={this.props.handleChange}
-          disabled={this.props.checked} />&nbsp;&nbsp;&nbsp;
-        <input 
-          id={this.props.id + "Checkbox"} 
-          type="radio"
-          checked={this.props.checked}
-          onChange={this.props.handleChange} />  
+      <div className="row">
+        <div className="col-9">
+          <input
+            id={this.props.id}
+            type="date"
+            className="form-control"
+            value={this.props.value}
+            onChange={this.props.handleChange}
+            disabled={this.props.checked} />
+        </div>
+        <div className="col">
+          <input 
+            id={this.props.id + "Checkbox"} 
+            type="radio"
+            checked={this.props.checked}
+            onChange={this.props.handleChange} />
+        </div>
       </div>
     );
   }
