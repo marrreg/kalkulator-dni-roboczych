@@ -10,7 +10,7 @@ class NumberOfWorkdays extends React.Component {
           type="number"
           min="1"
           default="1"
-          className="form-control flat"
+          className="form-control"
           value={this.props.numberOfWorkdays}
           onChange={this.props.handleChange}
           disabled={this.props.checked} />&nbsp;&nbsp;&nbsp;

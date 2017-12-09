@@ -8,7 +8,7 @@ class DateField extends React.Component {
         <input
           id={this.props.id}
           type="date"
-          className="form-control flat"
+          className="form-control"
           value={this.props.value}
           onChange={this.props.handleChange}
           disabled={this.props.checked} />&nbsp;&nbsp;&nbsp;

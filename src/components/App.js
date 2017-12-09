@@ -363,17 +363,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="container text-center">
-          <h1>Kalkulator Dni Roboczych</h1>
-          <br />
-          <CalcForm
-            fromDate={this.state.fromDate}
-            toDate={this.state.toDate}
-            numberOfWorkdays={this.state.numberOfWorkdays}
-            handleChange={this.handleChange}
-            checked={this.state.checked}
-          />
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            First column
+          </div>
+          <div className="container col-6 text-center">
+            <h1>Kalkulator Dni Roboczych</h1>
+            <br />
+            <CalcForm
+              fromDate={this.state.fromDate}
+              toDate={this.state.toDate}
+              numberOfWorkdays={this.state.numberOfWorkdays}
+              handleChange={this.handleChange}
+              checked={this.state.checked}
+            />
+          </div>
+          <div className="col">
+            Last column
+          </div>
         </div>
         <Footer />
       </div>
