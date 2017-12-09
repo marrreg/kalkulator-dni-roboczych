@@ -363,16 +363,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container" id="main-background">
         <div className="row">
-          <div className="col">
+          <div className="col text-center" id="center-space">
             <h1>Kalkulator Dni Roboczych</h1>
           </div>
         </div>
         <div className="row">
-          <div className="col">
-          </div>
-          <div className="col-6">
+          <div className="col"></div>
+          <div className="col-9">
             <CalcForm
               fromDate={this.state.fromDate}
               toDate={this.state.toDate}
@@ -381,8 +380,7 @@ class App extends React.Component {
               checked={this.state.checked}
             />
           </div>
-          <div className="col">
-          </div>
+          <div className="col"></div>
         </div>
       </div>
     );
