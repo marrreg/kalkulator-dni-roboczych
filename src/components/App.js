@@ -368,7 +368,7 @@ class App extends React.Component {
           <div className="col">
             First column
           </div>
-          <div className="container col-6 text-center">
+          <div className="col-6">
             <h1>Kalkulator Dni Roboczych</h1>
             <br />
             <CalcForm
