@@ -371,7 +371,6 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col">
-            1
           </div>
           <div className="col-6">
             <CalcForm
@@ -383,7 +382,6 @@ class App extends React.Component {
             />
           </div>
           <div className="col">
-            3
           </div>
         </div>
       </div>
