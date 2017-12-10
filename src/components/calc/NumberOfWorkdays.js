@@ -4,7 +4,7 @@ class NumberOfWorkdays extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col">Liczba dni:</div> 
+        <div className="col" id="label-column">Liczba dni:</div> 
         <div className="col-6">
         <input
           id="numberOfWorkdays"
@@ -16,7 +16,7 @@ class NumberOfWorkdays extends React.Component {
           onChange={this.props.handleChange}
           disabled={this.props.checked} />
         </div>
-        <div className="col">
+        <div className="col" id="radio-column">
         <input 
           id={"numberOfWorkdays" + "Checkbox"} 
           type="radio"

@@ -4,7 +4,7 @@ class DateField extends React.Component {
   render() {
     return (
       <div className="row">
-          <div className="col">{this.props.labelname}</div> 
+          <div className="col" id="label-column">{this.props.labelname}</div> 
           <div className="col-6">
           <input
             id={this.props.id}
@@ -14,7 +14,7 @@ class DateField extends React.Component {
             onChange={this.props.handleChange}
             disabled={this.props.checked} />
         </div>
-        <div className="col">
+        <div className="col" id="radio-column">
           <input 
             id={this.props.id + "Checkbox"} 
             type="radio"

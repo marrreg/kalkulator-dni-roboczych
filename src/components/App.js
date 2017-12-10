@@ -363,10 +363,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container" id="main-background">
+      <div className="container" id="floating-modal">
         <div className="row">
-          <div className="col text-center" id="center-space">
-            <h1>Kalkulator Dni Roboczych</h1>
+          <div className="col text-center">
+            
           </div>
         </div>
         <div className="row">
