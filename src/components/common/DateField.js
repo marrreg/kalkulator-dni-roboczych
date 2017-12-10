@@ -4,8 +4,7 @@ class DateField extends React.Component {
   render() {
     return (
       <div className="row">
-          <div className="col" id="label-column">{this.props.labelname}</div> 
-          <div className="col-6">
+          <div className="col-10">
           <input
             id={this.props.id}
             type="date"

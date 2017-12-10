@@ -5,7 +5,7 @@ import NumberOfWorkdays from './NumberOfWorkdays';
 class CalcForm extends React.Component {
   render() {
     return (
-      <form className="form-horizontal">
+      <form>
         <DateField
           id="fromDate"
           labelname="Od:"

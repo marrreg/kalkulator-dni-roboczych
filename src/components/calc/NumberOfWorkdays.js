@@ -4,8 +4,7 @@ class NumberOfWorkdays extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col" id="label-column">Liczba dni:</div> 
-        <div className="col-6">
+        <div className="col-10">
         <input
           id="numberOfWorkdays"
           type="number"

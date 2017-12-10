@@ -363,24 +363,27 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container" id="floating-modal">
+      <div>
         <div className="row">
-          <div className="col text-center">
-            
+          <div className="col-md" />
+          <div className="col-md-3" id="floating-modal">
+            <div className="row">
+              <div id="floating-modal-top-bar">
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <CalcForm
+                  fromDate={this.state.fromDate}
+                  toDate={this.state.toDate}
+                  numberOfWorkdays={this.state.numberOfWorkdays}
+                  handleChange={this.handleChange}
+                  checked={this.state.checked}
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="col"></div>
-          <div className="col-9">
-            <CalcForm
-              fromDate={this.state.fromDate}
-              toDate={this.state.toDate}
-              numberOfWorkdays={this.state.numberOfWorkdays}
-              handleChange={this.handleChange}
-              checked={this.state.checked}
-            />
-          </div>
-          <div className="col"></div>
+          <div className="col-md" />
         </div>
       </div>
     );
