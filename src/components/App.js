@@ -2,6 +2,7 @@ import React from 'react';
 import dateFormat from 'dateformat';
 import CalcForm from './calc/CalcForm';
 import Footer from './common/Footer';
+//import DatePicker from 'material-ui/DatePicker';
 
 class App extends React.Component {
   constructor(props) {
@@ -372,7 +373,6 @@ class App extends React.Component {
               </div>
             </div>
             <div className="row">
-              <div className="col">
                 <CalcForm
                   fromDate={this.state.fromDate}
                   toDate={this.state.toDate}
@@ -380,10 +380,9 @@ class App extends React.Component {
                   handleChange={this.handleChange}
                   checked={this.state.checked}
                 />
-              </div>
             </div>
           </div>
-          <div className="col-md" />
+          <div className="col-md"></div>
         </div>
       </div>
     );

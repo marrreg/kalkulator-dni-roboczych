@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react';
 class NumberOfWorkdays extends React.Component {
   render() {
     return (
-      <div className="row">
+      <div className="row" id="numberofworkdays-row">
         <div className="col-10">
         <input
           id="numberOfWorkdays"
