@@ -364,10 +364,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <div className="row">
-          <div className="col-md" />
-          <div className="col-md-3" id="floating-modal">
+          <div className="col" />
+          <div className="col-4" id="floating-modal">
             <div className="row">
               <div id="floating-modal-top-bar">
               </div>
@@ -382,7 +382,7 @@ class App extends React.Component {
                 />
             </div>
           </div>
-          <div className="col-md"></div>
+          <div className="col"></div>
         </div>
       </div>
     );
