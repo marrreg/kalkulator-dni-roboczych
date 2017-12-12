@@ -1,28 +1,21 @@
 import React, {PropTypes} from 'react';
 
+import NumberField from '../common/NumberField';
+import RadioField from '../common/RadioField';
+
 class NumberOfWorkdays extends React.Component {
   render() {
     return (
-      <form>
-        <div className="row" id="numberofworkdays-row">
-          <div className="col-10">
-          <input
-            id="numberOfWorkdays"
-            type="number"
-            min="1"
-            default="1"
-            className="form-control"
-            value={this.props.numberOfWorkdays}
-            onChange={this.props.handleChange}
-            disabled={this.props.checked} />
-          </div>
-          <div className="col" id="radio-column">
-          <input 
-            id={"numberOfWorkdays" + "Checkbox"} 
-            type="radio"
+      <form className="form-inline">
+        <div className="form-group">
+          <NumberField
+            value={this.props.value}
+            disabled={this.props.checked}
+            handleChange={this.props.handleChange} />
+          <RadioField 
+            id={"numberOfWorkdaysCheckbox"}
             checked={this.props.checked}
-            onChange={this.props.handleChange} />
-          </div>
+            handleChange={this.props.handleChange}/>
         </div>
       </form>
     );
@@ -30,7 +23,7 @@ class NumberOfWorkdays extends React.Component {
 }
 
 NumberOfWorkdays.propTypes = {
-  numberOfWorkdays: PropTypes.number,
+  value: PropTypes.number,
   handleChange: PropTypes.func,
   checked: PropTypes.bool
 };

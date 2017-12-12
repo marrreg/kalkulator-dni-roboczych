@@ -189,14 +189,14 @@ class App extends React.Component {
   }
 
   isOnlyEmptyElementInObject(sts, s) {
-	if (sts[s]) { return false; } // returns false if the field is not empty
-  let only = true;
-  
-  for (let k in sts) {
-    if (!(k == s) && !sts[k]) { only = false; }
-  }
- 	
-  return only;
+    if (sts[s]) { return false; } // returns false if the field is not empty
+    let only = true;
+    
+    for (let k in sts) {
+      if (!(k == s) && !sts[k]) { only = false; }
+    }
+    
+    return only;
   }
 
   countEmptyFields(sts) {
@@ -248,6 +248,9 @@ class App extends React.Component {
   }
 
   handleChange(e) {
+    console.log("CHANGINGGGGG");
+    console.log(e.target.id);
+    console.log(e.target.value);
     switch (e.target.id) {
       // ~~~ Radio selections ~~~
       case "fromDateCheckbox":
@@ -314,74 +317,22 @@ class App extends React.Component {
     }
   }
 
-  // handleChange(e) {
-  //   switch (e.target.id) {
-  //     case "numberofworkdays":
-  //       if (this.state.toDate == "" || this.state.checked["todate"] || this.state.previouslySelected == "fromdate") {
-  //         this.setState({ numberOfWorkdays: parseInt(e.target.value) }, () => {
-  //           this.setState({ toDate: this.calculateToDate(), previouslySelected: "fromdate" });}
-  //         );
-  //       } else if (this.state.fromDate == "" || this.state.checked["fromdate"] || this.state.previouslySelected == "todate") {
-  //         console.log("Should count the from date")
-  //         this.setState({ numberOfWorkdays: parseInt(e.target.value) }, () => {
-  //           this.setState({ fromDate: this.calculateFromDate(), previouslySelected: "todate" });}
-  //         );
-  //       } else {
-  //         console.log("Unhandled case" + this.state.previouslySelected);
-  //       }
-  //       break;
-  //     case "todate":
-  //       if (this.state.numberOfWorkdays == "" || this.state.checked["numberofworkdays"] || this.state.previouslySelected == "")
-  //       this.setState({ toDate: e.target.value }, () => {
-  //         this.setState({ numberOfWorkdays: this.calculateNumberOfWorkdays(), previouslySelected: "fromdate" });
-  //       });
-  //       break;
-  //     case "fromdate":
-  //       this.setState({ fromDate: e.target.value }, () => {
-  //         let d = this.getDateType(this.state.fromDate);
-  //         this.setState({ numberOfWorkdays: this.calculateNumberOfWorkdays(), previouslySelected: "todate" });
-  //       });
-  //       break;
-  //     case "fromdatecheckbox":
-  //       this.setState({
-  //         checked: { fromdate: !this.state.checked["fromdate"], todate: false, numberofworkdays: false }
-  //       });
-  //       break;
-  //     case "todatecheckbox":
-  //       this.setState({
-  //           checked: { fromdate: false, todate: !this.state.checked["todate"], numberofworkdays: false }
-  //       });
-  //       break;
-  //     case "numberofworkdayscheckbox":
-  //       this.setState({
-  //           checked: { fromdate: false, todate: false, numberofworkdays: !this.state.checked["numberofworkdays"] }
-  //       });
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // }
-
   render() {
     return (
       <div className="container">
-        <div className="row">
+        <div className="row no-gutters">
           <div className="col" />
-          <div className="col-xl-5 col-lg-5 col-md-6 col-sm-8 col-10" id="floating-modal">
-            <div className="row">
-              <div id="top-bar" />
-            </div>
-            <div className="row">
-              <CalcForm
-                fromDate={this.state.fromDate}
-                toDate={this.state.toDate}
-                numberOfWorkdays={this.state.numberOfWorkdays}
-                handleChange={this.handleChange}
-                checked={this.state.checked}
-              />
-            </div>
+          <div className="col-xl-4 col-lg-5 col-md-6 col-sm-7 col-9" id="floating-modal">
+            {/* <div id="top-bar" /> */}
+            <CalcForm
+              fromDate={this.state.fromDate}
+              toDate={this.state.toDate}
+              numberOfWorkdays={this.state.numberOfWorkdays}
+              handleChange={this.handleChange}
+              checked={this.state.checked}
+            />
           </div>
-          <div className="col"></div>
+          <div className="col" />
         </div>
       </div>
     );

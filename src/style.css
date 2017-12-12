@@ -32,6 +32,16 @@ body {
   background-color: #303F9F;
 }
 
+.numberofworkdays-area {
+  width: 100%;
+  background-color: #303F9F;
+}
+
+.date-area {
+  width: 100%;
+  background-color: #3F51B5;
+}
+
 #numberofworkdays-row {
   background-color: #3F51B5;
   padding: 25px 30% 30px 30%;

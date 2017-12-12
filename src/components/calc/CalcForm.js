@@ -1,36 +1,35 @@
 import React, {PropTypes} from 'react';
-import DateFieldCheckboxRight from '../common/DateFieldCheckboxRight';
-import DateFieldCheckboxLeft from '../common/DateFieldCheckboxLeft';
+
+import FromDate from './FromDate';
+import ToDate from './ToDate';
 import NumberOfWorkdays from './NumberOfWorkdays';
 
 class CalcForm extends React.Component {
   render() {
     return (
       <div>
-        <div className="row">
-          <div className="col">
-            <NumberOfWorkdays
-              numberOfWorkdays={this.props.numberOfWorkdays}
+        <div className="row no-gutters">
+          <div className="date-area">
+            <FromDate 
+              value={this.props.fromDate}
+              checked={this.props.checked["fromDate"]}
+              handleChange={this.props.handleChange} />
+          </div>
+        </div>
+        <div className="row no-gutters">
+          <div className="numberofworkdays-area">
+            <NumberOfWorkdays 
+              value={this.props.numberOfWorkdays}
               checked={this.props.checked["numberOfWorkdays"]}
               handleChange={this.props.handleChange} />
           </div>
         </div>
-        <div className="row" id="dates-row">
-          <div className="col-6">
-              <DateFieldCheckboxLeft
-                id="fromDate"
-                labelname="Od:"
-                value={this.props.fromDate}
-                checked={this.props.checked["fromDate"]}
-                handleChange={this.props.handleChange} />
-          </div>
-          <div className="col-6">
-              <DateFieldCheckboxRight
-                id="toDate"
-                labelname="Do:"
-                value={this.props.toDate}
-                checked={this.props.checked["toDate"]}
-                handleChange={this.props.handleChange} />
+        <div className="row no-gutters">
+          <div className="date-area">
+            <ToDate 
+              value={this.props.toDate}
+              checked={this.props.checked["toDate"]}
+              handleChange={this.props.handleChange} />
           </div>
         </div>
       </div>

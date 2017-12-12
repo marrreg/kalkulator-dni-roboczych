@@ -1,4 +1,6 @@
 import React, {PropTypes} from 'react';
+import RadioField from './RadioField';
+import DateField from './DateField';
 
 class DateFieldCheckboxLeft extends React.Component {
   render() {
@@ -6,19 +8,16 @@ class DateFieldCheckboxLeft extends React.Component {
       <form>
         <div className="row">
           <div className="col" id="radio-column">
-            <input 
-              id={this.props.id + "Checkbox"} 
-              type="radio"
+            <RadioField 
+              id={this.props.id + "Checkbox"}
               checked={this.props.checked}
-              onChange={this.props.handleChange} />
+              handleChange={this.props.handleChange} />
           </div>
           <div className="col-10">
-            <input
+            <DateField 
               id={this.props.id}
-              type="date"
-              className="form-control"
               value={this.props.value}
-              onChange={this.props.handleChange}
+              handleChange={this.props.handleChange}
               disabled={this.props.checked} />
           </div>
         </div>
