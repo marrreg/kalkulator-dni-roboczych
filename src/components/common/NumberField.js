@@ -7,7 +7,7 @@ class NumberField extends React.Component {
         id="numberOfWorkdays"
         type="number"
         value={this.props.value}
-        className="form-control"
+        className="form-control no-border square-border"
         onChange={this.props.handleChange}
         disabled={this.props.disabled} />
     );

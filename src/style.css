@@ -32,14 +32,28 @@ body {
   background-color: #303F9F;
 }
 
+.no-border {
+  border: 0;
+  box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
+}
+
+.square-border {
+  border-radius: 0px;
+}
+
 .numberofworkdays-area {
   width: 100%;
-  background-color: #303F9F;
+  background-color: #3F51B5;
 }
 
 .date-area {
   width: 100%;
   background-color: #3F51B5;
+}
+
+.selection-bar {
+  width: 100%;
+  background-color: #303F9F;
 }
 
 #numberofworkdays-row {
