@@ -4,18 +4,14 @@ class SelectionOption extends React.Component {
   render() {
     return (
         <div>
-            {this.props.selectionText}
+          <button type="button" class="btn btn-primary">{this.props.selectionText}</button>
         </div>
     );
   }
 }
 
 SelectionOption.propTypes = {
-  fromDate: PropTypes.string,
-  toDate: PropTypes.string,
-  numberOfWorkdays: PropTypes.number,
-  handleChange: PropTypes.func,
-  checked: PropTypes.object
+  selectionText: PropTypes.string
 };
 
 export default SelectionOption;

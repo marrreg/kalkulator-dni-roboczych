@@ -323,10 +323,6 @@ class App extends React.Component {
         <div className="row no-gutters">
           <div className="col" />
           <div className="col-xl-4 col-lg-5 col-md-6 col-sm-7 col-9" id="floating-modal">
-            <SelectionBar
-              checked={this.state.checked}
-              handleChange={this.handleChange}
-            />
             <CalcForm
               fromDate={this.state.fromDate}
               toDate={this.state.toDate}
