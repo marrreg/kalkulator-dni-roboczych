@@ -14,36 +14,66 @@
 .divider-color         { border-color: #BDBDBD; } */
 
 body {
-  background-color: #374046;
+  background-color: #283033;
+}
+
+.btn-transparent {
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(235, 235, 235);
+}
+
+input[type="date"], textarea {
+  color: rgb(235, 235, 235);
+  background: transparent;
+  border: none;
+}
+
+input[type="date"][disabled] {
+  background-color: rgba(10, 15, 19, 0.25);
+  color: rgb(235, 235, 235);
+}
+
+input[type="number"], textarea {
+  color: rgb(235, 235, 235);
+  background: transparent;
+  border: none;
+}
+
+input[type="number"][disabled] {
+  background-color: rgba(10, 15, 19, 0.25);
+  color: rgb(235, 235, 235);
 }
 
 #floating-modal { 
-  background-color: #FFFFFF;
-  box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.2);
+  background-color: #222222;
+  box-shadow: 3px 3px 15px -2px rgba(0,0,0,0.75);
   /* padding: 50px 50px 50px 50px; */
   margin-top: 5em;
-}
-
-#top-bar {
-  width: 100%; height: 20px;
-  border-style: solid;
-  border-color: #303F9F;
-  background-color: #303F9F;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
 }
 
 .numberofworkdays-area {
   width: 100%;
-  background-color: #3F51B5;
+  background-color: #283033;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .date-area {
   width: 100%;
-  background-color: #3F51B5;
+  background-color: #283033;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .selection-bar {
   width: 100%;
-  background-color: #303F9F;
+  background-color: #292929;
 }
 
 /* input[type=radio] {

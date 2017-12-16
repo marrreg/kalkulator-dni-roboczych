@@ -7,7 +7,7 @@ class NumberOfWorkdays extends React.Component {
   render() {
     return (
       <form className="form-inline">
-        <div className="form-group">
+        <div className="form-group">|||
           <NumberField
             value={this.props.value}
             disabled={this.props.checked}

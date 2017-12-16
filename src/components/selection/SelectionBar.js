@@ -6,13 +6,13 @@ class SelectionBar extends React.Component {
   render() {
     return (
       <div className="text-center selection-bar" role="group">
-        <div className="btn-group" role="group">
+        <div className="btn-group fit-to-width" role="group">
           <SelectionOption
-            selectionText="FROM" />
+            selectionText="start" />
           <SelectionOption
-            selectionText="WORKDAYS" />
+            selectionText="workdays" />
           <SelectionOption
-            selectionText="TO" />
+            selectionText="end" />
         </div>
       </div>
     );

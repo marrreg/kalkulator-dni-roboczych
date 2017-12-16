@@ -6,7 +6,7 @@ class ToDate extends React.Component {
   render() {
     return (
         <form className="form-inline">
-            <div className="form-group">
+            <div className="form-group">|||
                 <DateField 
                     id="toDate"
                     value={this.props.value}

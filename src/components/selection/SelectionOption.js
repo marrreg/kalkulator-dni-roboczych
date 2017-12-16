@@ -4,7 +4,7 @@ class SelectionOption extends React.Component {
   render() {
     return (
         <div>
-          <button type="button" class="btn btn-secondary">{this.props.selectionText}</button>
+          <button type="button" className="btn btn-transparent">{this.props.selectionText}</button>
         </div>
     );
   }
