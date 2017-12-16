@@ -3,12 +3,14 @@
   "description": "",
   "homepage": "https://stackblitz.com/edit/wdcalc-v0-9",
   "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
     "dateformat": "2.0.0",
     "material-ui": "^1.0.0-beta.23",
-    "react": "15.6.1",
-    "react-dom": "15.6.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "react-scripts": "1.0.10",
-    "react-toastr": "2.9.3"
+    "react-toastr": "2.9.3",
+    "reactstrap": "^5.0.0-alpha.4"
   },
   "version": "0.1.0",
   "private": true,

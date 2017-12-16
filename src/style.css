@@ -13,7 +13,6 @@
 .secondary-text-color  { color: #757575; }
 .divider-color         { border-color: #BDBDBD; } */
 
-
 body {
   background-color: #374046;
 }
@@ -32,15 +31,6 @@ body {
   background-color: #303F9F;
 }
 
-.no-border {
-  border: 0;
-  box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
-}
-
-.square-border {
-  border-radius: 0px;
-}
-
 .numberofworkdays-area {
   width: 100%;
   background-color: #3F51B5;
@@ -54,45 +44,6 @@ body {
 .selection-bar {
   width: 100%;
   background-color: #303F9F;
-}
-
-#numberofworkdays-row {
-  background-color: #3F51B5;
-  padding: 25px 30% 30px 30%;
-}
-
-#dates-row {
-  padding: 40px 0px 40px 0px;
-}
-
-#floating-modal-top-bar {
-  padding: 13px;
-  width: 100%;
-  background-color: #303F9F;
-}
-
-#radio-column {
-  text-align: left;
-  padding: 0.5em;
-}
-
-#label-column {
-  background-color: #ecf0f1;
-  margin: 3px 3px 3px 3px;
-  padding: 0.5em;
-  text-align: center;
-}
-
-#footer {
-  background-color: #212121;
-  height: 60px;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  line-height: 50px;
-  color: #aaa;
-  text-align: center;
-  width: 100%;
 }
 
 /* input[type=radio] {
