@@ -5,19 +5,11 @@ import DateField from '../common/DateField';
 class ToDate extends React.Component {
   render() {
     return (
-        <form className="form-inline">
-            <div className="form-group">|||
-                <DateField 
-                    id="toDate"
-                    value={this.props.value}
-                    handleChange={this.props.handleChange}
-                    disabled={this.props.checked} />
-                <RadioField 
-                    id="toDateCheckbox"
-                    checked={this.props.checked}
-                    handleChange={this.props.handleChange} />
-            </div>
-        </form>
+        <DateField 
+            id="toDate"
+            value={this.props.value}
+            handleChange={this.props.handleChange}
+            disabled={this.props.checked} />
     );
   }
 }
