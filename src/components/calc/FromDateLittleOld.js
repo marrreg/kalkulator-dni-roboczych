@@ -1,19 +1,15 @@
 import React, {PropTypes} from 'react';
 import RadioField from '../common/RadioField';
 import DateField from '../common/DateField';
-import DatePicker from 'material-ui/DatePicker';
-
 
 class FromDate extends React.Component {
   render() {
     return (
-        <DatePicker 
+        <DateField 
             id="fromDate"
-            onChange={this.props.handleChange}
-            autoOk={true}
-            disabled={this.props.checked}
             value={this.props.value}
-        />
+            handleChange={this.props.handleChange}
+            disabled={this.props.checked} />
     );
   }
 }

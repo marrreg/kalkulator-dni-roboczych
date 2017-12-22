@@ -9,7 +9,7 @@ class CalcForm extends React.Component {
     return (
       <div>
         <div className="row no-gutters">
-          <div className="col-10 date-area">
+          <div className="col-10 parameter-area">
             <FromDate 
               value={this.props.fromDate}
               checked={this.props.checked["fromDate"]}
@@ -17,7 +17,7 @@ class CalcForm extends React.Component {
           </div>
         </div>
         <div className="row no-gutters">
-          <div className="col-10 numberofworkdays-area">
+          <div className="col-10 parameter-area">
             <NumberOfWorkdays 
               value={this.props.numberOfWorkdays}
               checked={this.props.checked["numberOfWorkdays"]}
@@ -25,7 +25,7 @@ class CalcForm extends React.Component {
           </div>
         </div>
         <div className="row no-gutters">
-          <div className="col-10 date-area">
+          <div className="col-10 parameter-area">
             <ToDate 
               value={this.props.toDate}
               checked={this.props.checked["toDate"]}

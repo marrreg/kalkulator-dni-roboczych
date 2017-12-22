@@ -2,6 +2,8 @@ import React from 'react';
 import dateFormat from 'dateformat';
 import CalcForm from './calc/CalcForm';
 import SelectionBar from './selection/SelectionBar';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 //import { Button } from 'reactstrap';
 
 class App extends React.Component {
@@ -319,6 +321,7 @@ class App extends React.Component {
 
   render() {
     return (
+      <MuiThemeProvider>
       <div className="container">
         <div className="row no-gutters">
           <div className="col" />
@@ -335,6 +338,7 @@ class App extends React.Component {
           <div className="col" />
         </div>
       </div>
+      </MuiThemeProvider>
     );
   }
 }
