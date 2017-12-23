@@ -5,11 +5,25 @@ import DatePicker from 'material-ui/DatePicker';
 
 
 class FromDate extends React.Component {
+  constructor(props) {
+    super(props);
+
+    console.log(this.props)
+  }
+
+  dateChange (eRedundant, newDate) {
+    let e = new Event('input');
+    e.id = "fromDate";
+    e.value = newDate;
+    console.log(e);
+    this.props.handleChange(e);
+  }
+
   render() {
     return (
         <DatePicker 
             id="fromDate"
-            onChange={this.props.handleChange}
+            onChange={this.dateChange}
             autoOk={true}
             disabled={this.props.checked}
             value={this.props.value}

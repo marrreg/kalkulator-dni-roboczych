@@ -5,6 +5,12 @@ import ToDate from './ToDate';
 import NumberOfWorkdays from './NumberOfWorkdays';
 
 class CalcForm extends React.Component {
+  constructor(props) {
+    super();
+
+    console.log(this.props)
+  }
+
   render() {
     return (
       <div>

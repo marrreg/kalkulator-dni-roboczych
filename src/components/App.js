@@ -249,10 +249,17 @@ class App extends React.Component {
     return returnFunction;
   }
 
-  handleChange(e) {
-    console.log("CHANGINGGGGG");
-    console.log(e.target.id);
-    console.log(e.target.value);
+  handleChange(e, newDate) {
+    console.log("Change");
+    if (e == null) {
+      console.log("Event is null!");
+      console.log(newDate);
+    } else {
+      console.log("CHANGINGGGGG");
+      console.log(e.target.id);
+      console.log(e.target.value);
+    }
+
     switch (e.target.id) {
       // ~~~ Radio selections ~~~
       case "fromDateCheckbox":
