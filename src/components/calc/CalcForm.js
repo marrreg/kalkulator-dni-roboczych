@@ -5,12 +5,6 @@ import ToDate from './ToDate';
 import NumberOfWorkdays from './NumberOfWorkdays';
 
 class CalcForm extends React.Component {
-  constructor(props) {
-    super();
-
-    console.log(this.props)
-  }
-
   render() {
     return (
       <div>
@@ -19,7 +13,7 @@ class CalcForm extends React.Component {
             <FromDate 
               value={this.props.fromDate}
               checked={this.props.checked["fromDate"]}
-              handleChange={this.props.handleChange} />
+              handleChange={this.props.handleFromDateChange} />
           </div>
         </div>
         <div className="row no-gutters">

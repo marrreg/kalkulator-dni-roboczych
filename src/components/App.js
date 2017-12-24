@@ -22,6 +22,7 @@ class App extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleFromDateChange = this.handleFromDateChange.bind(this);
   }
 
   getDateType(date) {
@@ -249,18 +250,32 @@ class App extends React.Component {
     return returnFunction;
   }
 
+  handleFromDateChange(e, newFromDate) {
+    console.log("Changing fromDate");
+    let newDate = {
+      id: "fromDate",
+      value: dateFormat(newFromDate, "yyyy-mm-dd")
+    };
+    console.log("type of handlechange", this.calculateFunctionMapper);
+
+    this.handleChange(e, newDate);
+  }
+
   handleChange(e, newDate) {
-    console.log("Change");
+    console.log("Change", this.calculateFunctionMapper);
+    console.log(this.state.fromDate);
+    let occurrenceId;
+    let occurrenceValue;
+
     if (e == null) {
-      console.log("Event is null!");
-      console.log(newDate);
+      occurrenceId = newDate.id;
+      occurrenceValue = newDate.value;
     } else {
-      console.log("CHANGINGGGGG");
-      console.log(e.target.id);
-      console.log(e.target.value);
+      occurrenceId = e.target.id;
+      occurrenceValue = e.target.value;
     }
 
-    switch (e.target.id) {
+    switch (occurrenceId) {
       // ~~~ Radio selections ~~~
       case "fromDateCheckbox":
         this.setState({
@@ -283,9 +298,9 @@ class App extends React.Component {
       case "fromDate":
       case "toDate":
       case "numberOfWorkdays":
-        let changed = e.target.id;
+        let changed = occurrenceId;
         let change = {};
-        changed == "numberOfWorkdays" ? change[changed] = parseInt(e.target.value) : change[changed] = e.target.value;
+        changed == "numberOfWorkdays" ? change[changed] = parseInt(e.target.value) : change[changed] = occurrenceValue;
         
         this.setState(change, () => {
           let fieldStates = {
@@ -339,6 +354,7 @@ class App extends React.Component {
               toDate={this.state.toDate}
               numberOfWorkdays={this.state.numberOfWorkdays}
               handleChange={this.handleChange}
+              handleFromDateChange={this.handleFromDateChange}
               checked={this.state.checked}
             />
           </div>
