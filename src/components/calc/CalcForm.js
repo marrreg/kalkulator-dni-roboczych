@@ -13,7 +13,8 @@ class CalcForm extends React.Component {
             <FromDate 
               value={this.props.fromDate}
               checked={this.props.checked["fromDate"]}
-              handleChange={this.props.handleFromDateChange} />
+              handleDateChange={this.props.handleFromDateChange}
+              handleChange={this.props.handleChange} />
           </div>
         </div>
         <div className="row no-gutters">
@@ -29,6 +30,7 @@ class CalcForm extends React.Component {
             <ToDate 
               value={this.props.toDate}
               checked={this.props.checked["toDate"]}
+              handleDateChange={this.props.handleToDateChange}
               handleChange={this.props.handleChange} />
           </div>
         </div>
@@ -38,8 +40,8 @@ class CalcForm extends React.Component {
 }
 
 CalcForm.propTypes = {
-  fromDate: PropTypes.string,
-  toDate: PropTypes.string,
+  fromDate: PropTypes.date,
+  toDate: PropTypes.date,
   numberOfWorkdays: PropTypes.number,
   handleChange: PropTypes.func,
   checked: PropTypes.object

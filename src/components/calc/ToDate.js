@@ -1,23 +1,35 @@
 import React, {PropTypes} from 'react';
 import RadioField from '../common/RadioField';
 import DateField from '../common/DateField';
+import DatePicker from 'material-ui/DatePicker';
 
-class ToDate extends React.Component {
+
+class toDate extends React.Component {
   render() {
     return (
-        <DateField 
+      <div>
+        <DatePicker 
             id="toDate"
+            name="toDate"
+            onChange={this.props.handleDateChange}
+            autoOk={true}
+            fullWidth={true}
+            disabled={this.props.checked}
             value={this.props.value}
-            handleChange={this.props.handleChange}
-            disabled={this.props.checked} />
+        />
+        <RadioField 
+          id="toDateCheckbox"
+          checked={this.props.checked}
+          handleChange={this.props.handleChange} />
+      </div>
     );
   }
 }
 
-ToDate.propTypes = {
-  value: PropTypes.string,
+toDate.propTypes = {
+  value: PropTypes.date,
   checked: PropTypes.bool,
-  handleChange: PropTypes.func
+  handleDateChange: PropTypes.func
 };
 
-export default ToDate;
+export default toDate;
