@@ -5,8 +5,9 @@
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
     "dateformat": "2.0.0",
-    "react": "^15.6.1",
     "material-ui": "^0.20.0",
+    "prop-types": "^15.6.0",
+    "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.10",
     "react-toastr": "2.9.3",

@@ -1,7 +1,5 @@
 import React from 'react';
-import dateFormat from 'dateformat';
 import CalcForm from './calc/CalcForm';
-import SelectionBar from './selection/SelectionBar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 //import { Button } from 'reactstrap';
@@ -264,7 +262,7 @@ class App extends React.Component {
   }
 
   handleChange(e, newDate) {
-    console.log();
+    console.log("Change!");
     let occurrenceId;
     let occurrenceValue;
 
@@ -276,8 +274,8 @@ class App extends React.Component {
       occurrenceValue = e.target.value;
     }
 
-    console.log("Occurence: ", occurrenceId, "=", occurrenceValue);
-    console.log("this.state.checked=", this.state.checked);
+    //console.log("Occurence: ", occurrenceId, "=", occurrenceValue);
+    //console.log("this.state.checked=", this.state.checked);
 
     switch (occurrenceId) {
       // ~~~ Radio selections ~~~
@@ -295,15 +293,15 @@ class App extends React.Component {
         this.setState({
             checked: { fromDate: false, toDate: false, numberOfWorkdays: true }
         });
-        console.log(this.state.checked);
+        //console.log(this.state.checked);
         break;
       // ~~~ Date and Num of Workdays selections ~~~
       case "fromDate":
       case "toDate":
       case "numberOfWorkdays":
         let change = {};
-        occurrenceId === "numberOfWorkdays" ? change[occurrenceId] = parseInt(occurrenceValue) : change[occurrenceId] = occurrenceValue;
-        console.log("change: ", change);
+        occurrenceId === "numberOfWorkdays" ? change[occurrenceId] = parseInt(occurrenceValue, 10) : change[occurrenceId] = occurrenceValue;
+        //console.log("change: ", change);
 
         this.setState(change, () => {
           let fieldStates = {
@@ -312,7 +310,7 @@ class App extends React.Component {
             numberOfWorkdays: this.state["numberOfWorkdays"] 
           };
 
-          console.log("Field states: ", fieldStates);
+          //console.log("Field states: ", fieldStates);
 
           let calculateFunctions = {
             fromDate: this.calculateFromDate,
@@ -326,31 +324,31 @@ class App extends React.Component {
           let stateUpdate = {};
           let checkedUpdate = {};
 
-          console.log("Number of empty fields: ", numberOfEmptyFields);
-          console.log("Empty fields: ", emptyFields);
-          console.log("State update before: ", stateUpdate);
-          console.log("Checked update before: ", checkedUpdate);
+          //console.log("Number of empty fields: ", numberOfEmptyFields);
+          //console.log("Empty fields: ", emptyFields);
+          //console.log("State update before: ", stateUpdate);
+          //console.log("Checked update before: ", checkedUpdate);
           
           if (numberOfEmptyFields === 1) {
-            console.log("Number of empty fields is 1");
+            //console.log("Number of empty fields is 1");
             calculateFunction = calculateFunctions[emptyFields[0]].bind(this);
             stateUpdate[emptyFields[0]] = calculateFunction();
             checkedUpdate[emptyFields[0]] = true;
             stateUpdate["checked"] = checkedUpdate;
             this.setState(stateUpdate);
           } else if (numberOfEmptyFields === 0) {
-            console.log("Number of empty fields is 0");
+            //console.log("Number of empty fields is 0");
             let checkedFieldName = this.getCheckedFieldName(this.state.checked)
             calculateFunction = calculateFunctions[checkedFieldName].bind(this);
             stateUpdate[checkedFieldName] = calculateFunction();
             this.setState(stateUpdate);
           } else {
-            console.log("Number of empty fields is other than 0 and 1");
+            //console.log("Number of empty fields is other than 0 and 1");
           }
 
-          console.log("State update after: ", stateUpdate);
-          console.log("Checked update after: ", checkedUpdate);
-          console.log("Complete state after: ", this.state);
+          //console.log("State update after: ", stateUpdate);
+          //console.log("Checked update after: ", checkedUpdate);
+          //console.log("Complete state after: ", this.state);
         });
         break;
       default:
@@ -365,7 +363,6 @@ class App extends React.Component {
         <div className="row no-gutters">
           <div className="col" />
           <div className="col-xl-4 col-lg-5 col-md-6 col-sm-7 col-10" id="floating-modal">
-            <SelectionBar />
             <CalcForm
               fromDate={this.state.fromDate}
               toDate={this.state.toDate}

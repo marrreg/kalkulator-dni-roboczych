@@ -1,16 +1,17 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class RadioField extends React.Component {
   render() {
     return (
-      <span class="input-group-addon">
+      <div className="input-group-addon">
         <input 
           id={this.props.id}
           type="radio"
           className="form-check"
           checked={this.props.checked}
           onChange={this.props.handleChange} />
-      </span>
+      </div>
     );
   }
 }

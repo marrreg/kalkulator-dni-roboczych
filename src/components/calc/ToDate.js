@@ -1,6 +1,7 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import RadioField from '../common/RadioField';
-import DateField from '../common/DateField';
 import DatePicker from 'material-ui/DatePicker';
 
 
@@ -27,7 +28,7 @@ class toDate extends React.Component {
 }
 
 toDate.propTypes = {
-  value: PropTypes.date,
+  value: PropTypes.instanceOf(Date),
   checked: PropTypes.bool,
   handleDateChange: PropTypes.func
 };

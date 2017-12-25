@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import FromDate from './FromDate';
 import ToDate from './ToDate';
@@ -40,8 +41,8 @@ class CalcForm extends React.Component {
 }
 
 CalcForm.propTypes = {
-  fromDate: PropTypes.date,
-  toDate: PropTypes.date,
+  fromDate: PropTypes.instanceOf(Date),
+  toDate: PropTypes.instanceOf(Date),
   numberOfWorkdays: PropTypes.number,
   handleChange: PropTypes.func,
   checked: PropTypes.object
