@@ -8,21 +8,14 @@ import DatePicker from 'material-ui/DatePicker';
 class FromDate extends React.Component {
   render() {
     return (
-      <div>
-        <DatePicker 
-            id="fromDate"
-            name="fromDate"
-            onChange={this.props.handleDateChange}
-            autoOk={true}
-            fullWidth={true}
-            disabled={this.props.checked}
-            value={this.props.value}
-        />
-        <RadioField 
-          id="fromDateCheckbox"
-          checked={this.props.checked}
-          handleChange={this.props.handleChange} />
-      </div>
+      <DatePicker 
+          id="fromDate"
+          name="fromDate"
+          floatingLabelText="Start Date"
+          onChange={this.props.handleDateChange}
+          autoOk={true}
+          disabled={this.props.checked}
+          value={this.props.value} />
     );
   }
 }

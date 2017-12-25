@@ -8,17 +8,14 @@ import DatePicker from 'material-ui/DatePicker';
 class toDate extends React.Component {
   render() {
     return (
-      <div>
-        <DatePicker 
-            id="toDate"
-            name="toDate"
-            onChange={this.props.handleDateChange}
-            autoOk={true}
-            fullWidth={true}
-            disabled={this.props.checked}
-            value={this.props.value}
-        />
-      </div>
+      <DatePicker 
+          id="toDate"
+          name="toDate"
+          floatingLabelText="End Date"
+          onChange={this.props.handleDateChange}
+          autoOk={true}
+          disabled={this.props.checked}
+          value={this.props.value} />
     );
   }
 }

@@ -295,6 +295,7 @@ class App extends React.Component {
       case "fromDate":
       case "toDate":
       case "numberOfWorkdays":
+        console.log(occurrenceId, occurrenceValue);
         let change = {};
         occurrenceId === "numberOfWorkdays" ? change[occurrenceId] = parseInt(occurrenceValue, 10) : change[occurrenceId] = occurrenceValue;
 
@@ -342,9 +343,9 @@ class App extends React.Component {
     return (
       <MuiThemeProvider>
       <div className="container">
-        <div className="row no-gutters">
+        <div className="row">
           <div className="col" />
-          <div className="col-xl-4 col-lg-5 col-md-6 col-sm-7 col-10" id="floating-modal">
+          <div className="col-xl-4 col-lg-5 col-md-6 col-sm-7 col-10">
             <CalcForm
               fromDate={this.state.fromDate}
               toDate={this.state.toDate}
