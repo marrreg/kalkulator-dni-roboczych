@@ -6,6 +6,9 @@ import DatePicker from 'material-ui/DatePicker';
 
 
 class toDate extends React.Component {
+  componentWillReceiveProps(nextProps) {
+    console.log("New props for ToDate: ", nextProps);
+  }
   render() {
     return (
       <div>

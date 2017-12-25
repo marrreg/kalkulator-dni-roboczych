@@ -21,6 +21,7 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleFromDateChange = this.handleFromDateChange.bind(this);
     this.handleToDateChange = this.handleToDateChange.bind(this);
+    this.calculateToDate = this.calculateToDate.bind(this);
   }
 
   getMovingHolidaysForYear(queryYear) {
@@ -145,22 +146,38 @@ class App extends React.Component {
   }
 
   calculateToDate() {
+    console.log("10.1", this.state.fromDate, this.state.toDate);
     let dateFirst = this.state.fromDate;
+    console.log("10.2", this.state.fromDate, this.state.toDate);
     let checkedDate = dateFirst;
+    console.log("10.3", this.state.fromDate, this.state.toDate);
     let expectedNumberOfWorkdays = this.state.numberOfWorkdays;
+    console.log("10.4", this.state.fromDate, this.state.toDate);
     let finalDate = checkedDate;
+    console.log("10.5", this.state.fromDate, this.state.toDate);
     let checkedNumberOfWorkdays = 0;
-
-    while (checkedNumberOfWorkdays < expectedNumberOfWorkdays) {
-      if (!this.isHoliday(checkedDate)) {
-        checkedDate = this.nextDay(checkedDate);
-        finalDate = checkedDate;
-        checkedNumberOfWorkdays++;
-      } else {
-        checkedDate = this.nextDay(checkedDate);
-      }
-    }
+    console.log("10.6", this.state.fromDate, this.state.toDate);
     
+    let i = 0;
+    while (checkedNumberOfWorkdays < expectedNumberOfWorkdays) {
+      console.log("Inside while loop");
+      console.log("10.6.1", this.state.fromDate, this.state.toDate);
+      if (!this.isHoliday(checkedDate)) {
+        console.log("10.6.2", this.state.fromDate, this.state.toDate);
+        checkedDate = this.nextDay(checkedDate);
+        console.log("10.6.3", this.state.fromDate, this.state.toDate);
+        finalDate = checkedDate;
+        console.log("10.6.4", this.state.fromDate, this.state.toDate);
+        checkedNumberOfWorkdays++;
+        console.log("10.6.5", this.state.fromDate, this.state.toDate);
+      } else {
+        console.log("10.6.6", this.state.fromDate, this.state.toDate);
+        checkedDate = this.nextDay(checkedDate);
+        console.log("10.6.7", this.state.fromDate, this.state.toDate);
+      }
+      console.log("10.6.8", this.state.fromDate, this.state.toDate);
+    }
+    console.log("10.8", this.state.fromDate, this.state.toDate);
     return finalDate;
   }
 
@@ -299,16 +316,22 @@ class App extends React.Component {
       case "fromDate":
       case "toDate":
       case "numberOfWorkdays":
+        console.log("a", this.state.fromDate, this.state.toDate);
         let change = {};
+        console.log("b", this.state.fromDate, this.state.toDate);
         occurrenceId === "numberOfWorkdays" ? change[occurrenceId] = parseInt(occurrenceValue, 10) : change[occurrenceId] = occurrenceValue;
-        //console.log("change: ", change);
-
+        console.log("c", this.state.fromDate, this.state.toDate);
+        console.log("change: ", change);
+        console.log("d", this.state.fromDate, this.state.toDate);
         this.setState(change, () => {
+          console.log(0, this.state.fromDate, this.state.toDate);
+          console.log(1, this.state.fromDate, this.state.toDate);
           let fieldStates = {
             fromDate: this.state["fromDate"],
             toDate: this.state["toDate"],
             numberOfWorkdays: this.state["numberOfWorkdays"] 
           };
+          console.log(2, this.state.fromDate, this.state.toDate);
 
           //console.log("Field states: ", fieldStates);
 
@@ -317,39 +340,60 @@ class App extends React.Component {
             toDate: this.calculateToDate,
             numberOfWorkdays: this.calculateNumberOfWorkdays
           };
-
+          console.log(3, this.state.fromDate, this.state.toDate);
           let numberOfEmptyFields = this.countEmptyFields(fieldStates);
+          console.log(4, this.state.fromDate, this.state.toDate);
           let emptyFields = this.getEmptyFieldNames(fieldStates);
+          console.log(5, this.state.fromDate, this.state.toDate);
           let calculateFunction = null;
+          console.log(6, this.state.fromDate, this.state.toDate);
           let stateUpdate = {};
+          console.log(7, this.state.fromDate, this.state.toDate);
           let checkedUpdate = {};
-
+          console.log(8, this.state.fromDate, this.state.toDate);
           //console.log("Number of empty fields: ", numberOfEmptyFields);
           //console.log("Empty fields: ", emptyFields);
           //console.log("State update before: ", stateUpdate);
           //console.log("Checked update before: ", checkedUpdate);
           
           if (numberOfEmptyFields === 1) {
+            console.log(9, this.state.fromDate, this.state.toDate);
             //console.log("Number of empty fields is 1");
             calculateFunction = calculateFunctions[emptyFields[0]].bind(this);
+            console.log(10, this.state.fromDate, this.state.toDate);
+            console.log("Calc func: ", calculateFunction);
+            console.log("emptyFields: ", emptyFields[0]);
             stateUpdate[emptyFields[0]] = calculateFunction();
+            console.log(11, this.state.fromDate, this.state.toDate);
+            console.log("Calc func: ", calculateFunction);
+            console.log("emptyFields: ", emptyFields[0]);
             checkedUpdate[emptyFields[0]] = true;
+            console.log(12, this.state.fromDate, this.state.toDate);
             stateUpdate["checked"] = checkedUpdate;
+            console.log(13, this.state.fromDate, this.state.toDate);
             this.setState(stateUpdate);
+            console.log(14, this.state.fromDate, this.state.toDate);
           } else if (numberOfEmptyFields === 0) {
             //console.log("Number of empty fields is 0");
-            let checkedFieldName = this.getCheckedFieldName(this.state.checked)
+            console.log(15, this.state.fromDate, this.state.toDate);
+            let checkedFieldName = this.getCheckedFieldName(this.state.checked);
+            console.log(16, this.state.fromDate, this.state.toDate);
             calculateFunction = calculateFunctions[checkedFieldName].bind(this);
+            console.log(17, this.state.fromDate, this.state.toDate);
             stateUpdate[checkedFieldName] = calculateFunction();
+            console.log(18, this.state.fromDate, this.state.toDate);
             this.setState(stateUpdate);
+            console.log(19, this.state.fromDate, this.state.toDate);
           } else {
             //console.log("Number of empty fields is other than 0 and 1");
+            console.log(20, this.state.fromDate, this.state.toDate);
           }
 
           //console.log("State update after: ", stateUpdate);
           //console.log("Checked update after: ", checkedUpdate);
           //console.log("Complete state after: ", this.state);
         });
+        console.log(21, this.state.fromDate, this.state.toDate);
         break;
       default:
         break;
