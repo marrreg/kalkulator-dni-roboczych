@@ -18,10 +18,6 @@ class toDate extends React.Component {
             disabled={this.props.checked}
             value={this.props.value}
         />
-        <RadioField 
-          id="toDateCheckbox"
-          checked={this.props.checked}
-          handleChange={this.props.handleChange} />
       </div>
     );
   }

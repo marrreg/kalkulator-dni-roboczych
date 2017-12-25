@@ -152,7 +152,6 @@ class App extends React.Component {
     let finalDate = checkedDate;
     let checkedNumberOfWorkdays = 0;
     
-    let i = 0;
     while (checkedNumberOfWorkdays < expectedNumberOfWorkdays) {
       if (!this.isHoliday(checkedDate)) {
         checkedDate = this.nextDay(checkedDate);

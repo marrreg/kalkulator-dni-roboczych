@@ -37,3 +37,19 @@ input[type="number"][disabled] {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+.parameter-area-top {
+  width: 100%;
+  background-color: #283033;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.radio-area {
+  width: 100%;
+  background-color: #283033;
+  margin-top: 10px;
+  margin-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
