@@ -9,10 +9,8 @@ import Paper from 'material-ui/Paper';
 const style = {
   backgroundColor: "#FAFAFA",
   marginTop: 50,
-  paddingLeft: 50,
-  paddingRight: 50,
-  paddingTop: 50,
-  paddingBottom: 50,
+  padding: 40,
+  paddingTop: 35, // temporary adjustment to account for logo image top transparent bar
   textAlign: 'center',
   display: 'inline-block',
 };
@@ -362,7 +360,7 @@ class App extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col" />
-          <div className="col-xl-4 col-lg-5 col-md-6 col-sm-7 col-10">
+          <div className="col">
           <Paper style={style} zDepth={4}>
             <Logo />
             <CalcForm
