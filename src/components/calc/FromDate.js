@@ -4,18 +4,17 @@ import PropTypes from 'prop-types';
 import RadioField from '../common/RadioField';
 import DatePicker from 'material-ui/DatePicker';
 
-
 class FromDate extends React.Component {
   render() {
     return (
-      <DatePicker 
-          id="fromDate"
-          name="fromDate"
-          floatingLabelText="Start Date"
-          onChange={this.props.handleDateChange}
-          autoOk={true}
-          disabled={this.props.checked}
-          value={this.props.value} />
+      <DatePicker
+        id="fromDate"
+        name="fromDate"
+        floatingLabelText="Data początkowa"
+        onChange={this.props.handleDateChange}
+        autoOk={true}
+        disabled={this.props.checked}
+        value={this.props.value} />
     );
   }
 }

@@ -7,17 +7,10 @@ import ToDate from './ToDate';
 import RadioField from '../common/RadioField';
 import NumberOfWorkdays from './NumberOfWorkdays';
 
-const style = {
-  backgroundColor: "#FAFAFA",
-  margin: 20,
-  textAlign: 'center',
-  display: 'inline-block',
-};
-
 class CalcForm extends React.Component {
   render() {
     return (
-      <Paper style={style} zDepth={4}>
+      <div>
         <FromDate 
           value={this.props.fromDate}
           checked={this.props.checked["fromDate"]}
@@ -32,7 +25,7 @@ class CalcForm extends React.Component {
           checked={this.props.checked["toDate"]}
           handleDateChange={this.props.handleToDateChange}
           handleChange={this.props.handleChange} />
-      </Paper>
+      </div>
     );
   }
 }

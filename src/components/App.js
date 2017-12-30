@@ -1,8 +1,21 @@
 import React from 'react';
 import CalcForm from './calc/CalcForm';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Logo from './logo/Logo';
+import Paper from 'material-ui/Paper';
 
 //import { Button } from 'reactstrap';
+
+const style = {
+  backgroundColor: "#FAFAFA",
+  marginTop: 50,
+  paddingLeft: 50,
+  paddingRight: 50,
+  paddingTop: 50,
+  paddingBottom: 50,
+  textAlign: 'center',
+  display: 'inline-block',
+};
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +23,7 @@ class App extends React.Component {
     this.state = {
       fromDate: null,
       toDate: null,
-      numberOfWorkdays: 0,
+      numberOfWorkdays: "",
       checked: {
         fromDate: false,
         toDate: false,
@@ -296,6 +309,10 @@ class App extends React.Component {
       case "toDate":
       case "numberOfWorkdays":
         console.log(occurrenceId, occurrenceValue);
+        if (occurrenceId === "numberOfWorkdays" && occurrenceValue === "") {
+          this.setState({numberOfWorkdays: ""});
+          break;
+        }
         let change = {};
         occurrenceId === "numberOfWorkdays" ? change[occurrenceId] = parseInt(occurrenceValue, 10) : change[occurrenceId] = occurrenceValue;
 
@@ -346,6 +363,8 @@ class App extends React.Component {
         <div className="row">
           <div className="col" />
           <div className="col-xl-4 col-lg-5 col-md-6 col-sm-7 col-10">
+          <Paper style={style} zDepth={4}>
+            <Logo />
             <CalcForm
               fromDate={this.state.fromDate}
               toDate={this.state.toDate}
@@ -355,6 +374,7 @@ class App extends React.Component {
               handleToDateChange={this.handleToDateChange}
               checked={this.state.checked}
             />
+            </Paper>
           </div>
           <div className="col" />
         </div>

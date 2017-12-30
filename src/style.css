@@ -1,55 +1,11 @@
 body {
-  background-color: #37474F;
+  background: #7474BF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: 'Roboto', sans-serif;
 }
 
-.btn-transparent {
-  background-color: rgba(255, 255, 255, 0);
-  color: rgb(235, 235, 235);
-}
-
-input[type="number"], textarea {
-  color: rgb(235, 235, 235);
-  background: transparent;
-  border: none;
-}
-
-input[type="number"][disabled] {
-  background-color: rgba(10, 15, 19, 0.25);
-  color: rgb(235, 235, 235);
-}
-
-#floating-modal { 
-  background-color: #222222;
-  box-shadow: 3px 3px 15px -2px rgba(0,0,0,0.75);
-  /* padding: 50px 50px 50px 50px; */
-  margin-top: 5em;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-}
-
-.parameter-area {
+.logo-img {
   width: 100%;
-  background-color: #283033;
-  margin-top: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.parameter-area-top {
-  width: 100%;
-  background-color: #283033;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.radio-area {
-  width: 100%;
-  background-color: #283033;
-  margin-top: 10px;
-  margin-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  border: 0px;
 }
