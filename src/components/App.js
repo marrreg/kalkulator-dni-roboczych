@@ -360,7 +360,7 @@ class App extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col" />
-          <div className="col">
+          <div className="col" id="main-tile">
           <Paper style={style} zDepth={4}>
             <Logo />
             <CalcForm
