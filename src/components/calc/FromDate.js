@@ -10,6 +10,7 @@ class FromDate extends React.Component {
       <DatePicker
         id="fromDate"
         name="fromDate"
+        locale="fa_IR"
         floatingLabelText="Data początkowa"
         onChange={this.props.handleDateChange}
         autoOk={true}

@@ -11,7 +11,7 @@ class CalcForm extends React.Component {
   render() {
     return (
       <div>
-        <FromDate 
+        <FromDate
           value={this.props.fromDate}
           checked={this.props.checked["fromDate"]}
           handleDateChange={this.props.handleFromDateChange}

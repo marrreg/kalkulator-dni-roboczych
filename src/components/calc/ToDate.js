@@ -10,6 +10,7 @@ class toDate extends React.Component {
       <DatePicker 
           id="toDate"
           name="toDate"
+          locale="pl_PL"
           floatingLabelText="Data końcowa"
           onChange={this.props.handleDateChange}
           autoOk={true}
