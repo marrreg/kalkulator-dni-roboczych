@@ -8,7 +8,6 @@ import Paper from 'material-ui/Paper';
 
 const style = {
   backgroundColor: "#FAFAFA",
-  marginTop: 50,
   padding: 40,
   paddingTop: 35, // temporary adjustment to account for logo image top transparent bar
   textAlign: 'center',
@@ -366,7 +365,7 @@ class App extends React.Component {
             <CalcForm
               fromDate={this.state.fromDate}
               toDate={this.state.toDate}
-              numberOfWorkdays={this.state.numberOfWorkdays}
+              numberOfWorkdays={this.state.numberOfWorkdays}  
               handleChange={this.handleChange}
               handleFromDateChange={this.handleFromDateChange}
               handleToDateChange={this.handleToDateChange}

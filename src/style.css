@@ -1,9 +1,30 @@
+html { 
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+}
+
 body {
-  background: #7474BF;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: #7474BF; 
+  background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 
+  background: linear-gradient(to right, #348AC7, #7474BF); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url('https://images.unsplash.com/photo-1512950050685-b1d4ae63d2df?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fa5f26372f4d2b24c11391c603cecc1e&auto=format&fit=crop&w=1650&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   font-family: 'Roboto', sans-serif;
-  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#mountNode {
+  margin: 0;
+  padding: 0;
 }
 
 .logo-img {
@@ -17,8 +38,16 @@ h1 {
 }
 
 #main-tile {
+  margin: 0;
+  display: flex;
   opacity: 0;
   animation: fade-in 400ms linear 300ms forwards;
+}
+
+@media all and (max-width: 480px) {
+  #main-tile {
+    margin-top: -10vh;
+  }
 }
 
 @keyframes fade-in {
