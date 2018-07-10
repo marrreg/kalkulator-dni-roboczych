@@ -43,6 +43,13 @@ h1 {
   animation: fade-in 400ms linear 300ms forwards;
 }
 
+#from-date-area, #number-of-workdays-area, #to-date-area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
+
 @media all and (max-width: 480px) {
   #main-tile {
     margin-top: -10vh;

@@ -7,15 +7,21 @@ import DatePicker from 'material-ui/DatePicker';
 class toDate extends React.Component {
   render() {
     return (
-      <DatePicker 
-          id="toDate"
-          name="toDate"
-          locale="pl_PL"
-          floatingLabelText="Data końcowa"
-          onChange={this.props.handleDateChange}
-          autoOk={true}
-          disabled={this.props.checked}
-          value={this.props.value} />
+      <div id="to-date-area">
+        <DatePicker 
+            id="toDate"
+            name="toDate"
+            locale="pl_PL"
+            floatingLabelText="Data końcowa"
+            onChange={this.props.handleDateChange}
+            autoOk={true}
+            disabled={this.props.checked}
+            value={this.props.value} />
+          <RadioField 
+          id="toDateCheckbox"
+          checked={this.props.checked}
+          handleChange={this.props.handleChange} />
+      </div>
     );
   }
 }

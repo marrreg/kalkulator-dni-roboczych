@@ -272,6 +272,7 @@ class App extends React.Component {
   }
 
   handleChange(e, newDate) {
+    console.log(e);
     let occurrenceId;
     let occurrenceValue;
 
