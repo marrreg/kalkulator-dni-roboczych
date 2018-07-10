@@ -3,6 +3,7 @@ import CalcForm from './calc/CalcForm';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Logo from './logo/Logo';
 import Paper from 'material-ui/Paper';
+import Instruction from './instruction/Instruction';
 
 //import { Button } from 'reactstrap';
 
@@ -372,6 +373,7 @@ class App extends React.Component {
               handleToDateChange={this.handleToDateChange}
               checked={this.state.checked}
             />
+            <Instruction />
             </Paper>
           </div>
           <div className="col" />
