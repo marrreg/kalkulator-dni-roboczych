@@ -6,8 +6,8 @@ html {
 }
 
 body {
-  /* background: #7474BF; 
-  background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 
+  background: aquamarine; 
+  /* background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 
   background: linear-gradient(to right, #348AC7, #7474BF); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,7 +38,7 @@ h1 {
 
 #main-tile {
   margin: 0;
-  display: flex;
+  /* display: flex; */
   opacity: 0;
   animation: fade-in 400ms linear 300ms forwards;
 }
