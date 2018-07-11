@@ -38,6 +38,13 @@ h1 {
   animation: fade-in 400ms linear 300ms forwards;
 }
 
+#instruction {
+  text-align: center;
+  margin-top: 10px;
+  color: rgb(94, 94, 94);
+  font-size: 13px;
+}
+
 #from-date-area, #number-of-workdays-area, #to-date-area {
   display: flex;
   flex-direction: row;

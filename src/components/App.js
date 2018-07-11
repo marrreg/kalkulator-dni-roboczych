@@ -22,6 +22,7 @@ class App extends React.Component {
       fromDate: null,
       toDate: null,
       numberOfWorkdays: "",
+      instructionText: "Wypełnij dwa z powyższych pól",
       checked: {
         fromDate: false,
         toDate: false,
@@ -339,6 +340,7 @@ class App extends React.Component {
             stateUpdate[emptyFields[0]] = calculateFunction();
             checkedUpdate[emptyFields[0]] = true;
             stateUpdate["checked"] = checkedUpdate;
+            stateUpdate["instructionText"] = "Dowolnie modyfikuj wybrane pola lub zmień zaznaczenie";
             this.setState(stateUpdate);
           } else if (numberOfEmptyFields === 0) {
             let checkedFieldName = this.getCheckedFieldName(this.state.checked);
@@ -373,8 +375,9 @@ class App extends React.Component {
               handleToDateChange={this.handleToDateChange}
               checked={this.state.checked}
             />
-            <Instruction />
             </Paper>
+            <Instruction
+              instructionText={this.state.instructionText} />
           </div>
           <div className="col" />
         </div>

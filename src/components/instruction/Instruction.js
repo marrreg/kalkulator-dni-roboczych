@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class Instruction extends React.Component {
   render() {
     return (
-      <p>Wypełnij dwa z powyższych pól</p>
+      <div id="instruction">{this.props.instructionText}</div>
         // <img
         //     className="logo-img"
         //     alt="Logo"
@@ -14,6 +14,8 @@ class Instruction extends React.Component {
   }
 }
 
-Instruction.propTypes = {};
+Instruction.propTypes = {
+    instructionText: PropTypes.string.isRequired
+};
 
 export default Instruction;
