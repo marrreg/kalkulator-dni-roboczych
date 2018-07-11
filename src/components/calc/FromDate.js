@@ -9,6 +9,8 @@ class FromDate extends React.Component {
     return (
       <div id="from-date-area">
         <DatePicker
+          minDate={new Date(1980, 0, 1)} 
+          maxDate={new Date(2026, 11, 31)} 
           id="fromDate"
           name="fromDate"
           locale="fa_IR"

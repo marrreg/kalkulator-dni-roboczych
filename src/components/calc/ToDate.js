@@ -9,6 +9,8 @@ class toDate extends React.Component {
     return (
       <div id="to-date-area">
         <DatePicker 
+            minDate={new Date(1980, 0, 1)} 
+            maxDate={new Date(2026, 11, 31)} 
             id="toDate"
             name="toDate"
             locale="pl_PL"
