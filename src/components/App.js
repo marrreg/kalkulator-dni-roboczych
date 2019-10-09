@@ -4,6 +4,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Logo from './logo/Logo';
 import Paper from 'material-ui/Paper';
 import Instruction from './instruction/Instruction';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-149668699-1');
 
 //import { Button } from 'reactstrap';
 
@@ -358,6 +361,11 @@ class App extends React.Component {
   }
 
   render() {
+    ReactGA.event({
+      category: 'User',
+      action: 'Rendered page'
+    });
+
     return (
       <MuiThemeProvider>
       <div className="container">
