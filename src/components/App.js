@@ -7,6 +7,7 @@ import Instruction from './instruction/Instruction';
 import ReactGA from 'react-ga';
 
 ReactGA.initialize('UA-149668699-1');
+ReactGA.pageview('/');
 
 //import { Button } from 'reactstrap';
 
