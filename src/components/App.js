@@ -9,7 +9,10 @@ import ReactGA from 'react-ga';
 ReactGA.initialize('UA-149668699-1');
 ReactGA.pageview('/');
 
-//import { Button } from 'reactstrap';
+ReactGA.event({
+  category: 'User',
+  action: 'Opened page'
+});
 
 const style = {
   backgroundColor: "#FAFAFA",
@@ -158,6 +161,11 @@ class App extends React.Component {
 
     dateChecked.setDate(dateChecked.getDate() + 1);
 
+    ReactGA.event({
+      category: 'User',
+      action: 'Calculated numberOfWorkdays'
+    });
+
     return currentNumberOfWorkdays;
   }
 
@@ -165,6 +173,7 @@ class App extends React.Component {
     let dateFirst = this.state.fromDate;
     let checkedDate = new Date(dateFirst.getTime());
     let expectedNumberOfWorkdays = this.state.numberOfWorkdays;
+
     let finalDate = checkedDate;
     let checkedNumberOfWorkdays = 0;
     
@@ -177,6 +186,12 @@ class App extends React.Component {
         checkedDate = this.nextDay(checkedDate);
       }
     }
+
+    ReactGA.event({
+      category: 'User',
+      action: 'Calculated toDate'
+    });
+
     return finalDate;
   }
 
@@ -196,6 +211,11 @@ class App extends React.Component {
         checkedDate = this.previousDay(checkedDate);
       }
     }
+
+    ReactGA.event({
+      category: 'User',
+      action: 'Calculated fromDate'
+    });
 
     return finalDate;
   }
@@ -296,15 +316,27 @@ class App extends React.Component {
         this.setState({
           checked: { fromDate: true, toDate: false, numberOfWorkdays: false }
         });
+        ReactGA.event({
+          category: 'User',
+          action: 'Selected fromDateCheckbox'
+        });
         break;
       case "toDateCheckbox":
         this.setState({
             checked: { fromDate: false, toDate: true, numberOfWorkdays: false }
         });
+        ReactGA.event({
+          category: 'User',
+          action: 'Selected toDateCheckbox'
+        });
         break;
       case "numberOfWorkdaysCheckbox":
         this.setState({
             checked: { fromDate: false, toDate: false, numberOfWorkdays: true }
+        });
+        ReactGA.event({
+          category: 'User',
+          action: 'Selected numberOfWorkdaysCheckbox'
         });
         ////console.log(this.state.checked);
         break;
@@ -362,31 +394,26 @@ class App extends React.Component {
   }
 
   render() {
-    ReactGA.event({
-      category: 'User',
-      action: 'Rendered page'
-    });
-
     return (
       <MuiThemeProvider>
       <div className="container">
         <div className="row">
           <div className="col" />
           <div className="col" id="main-tile">
-          <Paper style={style} zDepth={1}>
-            <Logo />
-            <CalcForm
-              fromDate={this.state.fromDate}
-              toDate={this.state.toDate}
-              numberOfWorkdays={this.state.numberOfWorkdays}  
-              handleChange={this.handleChange}
-              handleFromDateChange={this.handleFromDateChange}
-              handleToDateChange={this.handleToDateChange}
-              checked={this.state.checked}
-            />
-            </Paper>
-            <Instruction
-              instructionText={this.state.instructionText} />
+            <Paper style={style} zDepth={1}>
+              <Logo />
+              <CalcForm
+                fromDate={this.state.fromDate}
+                toDate={this.state.toDate}
+                numberOfWorkdays={this.state.numberOfWorkdays}  
+                handleChange={this.handleChange}
+                handleFromDateChange={this.handleFromDateChange}
+                handleToDateChange={this.handleToDateChange}
+                checked={this.state.checked}
+              />
+              </Paper>
+              <Instruction
+                instructionText={this.state.instructionText} />
           </div>
           <div className="col" />
         </div>
