@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 class Logo extends React.Component {
   render() {
     return (
-      <h1>Kalkulator Dni Roboczych</h1>
+      <h1>
+        <a href="index.html" id="page-title" title="Kalkulator Dni Roboczych - łatwe obliczanie dni roboczych między datami">
+          Kalkulator Dni Roboczych
+        </a>
+      </h1>
         // <img
         //     className="logo-img"
         //     alt="Logo"

@@ -53,6 +53,16 @@ h1 {
   align-items: flex-end;
 }
 
+#page-title {
+  color: inherit;
+  text-decoration: none;
+}
+
+#page-tile:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
 @media all and (max-width: 480px) {
   #main-tile {
     margin-top: -10vh;
